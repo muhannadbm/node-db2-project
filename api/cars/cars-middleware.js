@@ -37,8 +37,8 @@ const checkVinNumberValid = (req, res, next) => {
  let isValidVin = vinValidator.validate(req.body.vin);
  if(isValidVin){
    next()
- }
- next({ message: `vin ${req.body.vin} is invalid`, status: 400 })
+ }else{
+ next({ message: `vin ${req.body.vin} is invalid`, status: 400 }) }
 }
 
 const checkVinNumberUnique = async(req, res, next) => {
