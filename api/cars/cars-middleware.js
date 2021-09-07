@@ -34,7 +34,6 @@ const checkCarPayload = (req, res, next) => {
 
 const checkVinNumberValid = (req, res, next) => {
   // DO YOUR MAGIC
-  req.body.vin
  let isValidVin = vinValidator.validate(req.body.vin);
  if(isValidVin){
    next()
