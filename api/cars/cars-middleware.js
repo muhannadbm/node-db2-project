@@ -4,6 +4,7 @@ const checkCarId = async (req, res, next) => {
   // DO YOUR MAGIC
   try{
   let mycar = await Car.getById(req.params.id)
+
   if(!mycar) {
     next({ message: `car with id ${req.params.id} is not found`, status: 404 })
   }
